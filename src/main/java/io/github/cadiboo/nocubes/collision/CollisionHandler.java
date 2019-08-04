@@ -19,7 +19,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Direction.Axis;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -55,7 +54,9 @@ import static net.minecraft.util.math.MathHelper.clamp;
 public final class CollisionHandler {
 
 	public static boolean shouldApplyMeshCollisions(@Nullable final Entity entity) {
-		return entity instanceof PlayerEntity;
+		// FIXME: Collisions be borked, fix & re-enable
+		return false;
+//		return entity instanceof PlayerEntity;
 	}
 
 	public static boolean shouldApplyReposeCollisions(@Nullable final Entity entity) {
@@ -297,9 +298,9 @@ public final class CollisionHandler {
 						final BlockState blockState = _this.getBlockState(pooledMutableBlockPos);
 						final VoxelShape offsetCollisionShape;
 						if (blockState.nocubes_isTerrainSmoothable) {
-							offsetCollisionShape = StolenReposeCode.getCollisionShape(blockState, _this, pooledMutableBlockPos);
+							offsetCollisionShape = StolenReposeCode.getCollisionShape(blockState, _this, pooledMutableBlockPos, context).withOffset(x, y, z);
 						} else {
-							offsetCollisionShape = blockState.getCollisionShape(_this, pooledMutableBlockPos).withOffset(x, y, z);
+							offsetCollisionShape = blockState.getCollisionShape(_this, pooledMutableBlockPos, context).withOffset(x, y, z);
 						}
 						if (VoxelShapes.compare(aabbShape, offsetCollisionShape, IBooleanFunction.AND)) {
 							collidingShapes.add(offsetCollisionShape);

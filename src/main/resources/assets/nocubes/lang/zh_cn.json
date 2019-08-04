@@ -8,7 +8,7 @@
 	"nocubes.key.toggleTerrainSmoothableBlockState": "切换可平滑地形的方块状态",
 	"nocubes.key.toggleLeavesSmoothableBlockState": "切换可平滑树叶的方块状态",
 	"nocubes.key.toggleProfilers": "切换性能分析器",
-	"nocubes.key.tempToggleTerrainCollisions": "切换地形碰撞",
+	"nocubes.key.toggleTerrainCollisions": "切换地形碰撞",
 	"nocubes.key.toggleRenderSmoothTerrain": "切换平滑地形渲染",
 	"nocubes.key.toggleRenderSmoothLeaves": "切换平滑树叶渲染",
 
@@ -27,6 +27,7 @@
 	"nocubes.config.client": "客户端配置",
 	"nocubes.config.renderSmoothTerrain": "渲染平滑地形",
 	"nocubes.config.renderSmoothLeaves": "渲染平滑树叶",
+	"nocubes.config.renderSmoothAndVanillaLeaves": "渲染光滑和香草叶",
 	"nocubes.config.leavesSmoothable": "可平滑树叶",
 	"nocubes.config.leavesMeshGenerator": "树叶网格生成器",
 	"nocubes.config.smoothLeavesType": "平滑树叶类型",
